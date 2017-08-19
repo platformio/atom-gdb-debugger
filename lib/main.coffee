@@ -75,10 +75,13 @@ module.exports = PlatformIOIDEDebugger =
             @cliPanel.show()
 
     cmdWrap: (cmd) ->
-        cmd()
-            .catch (err) ->
-                atom.notifications.addError err.toString()
-
+        ret = cmd()
+        if ret.catch
+            ret
+                .catch (err) ->
+                  atom.notifications.addError err.toString()
+        else
+            atom.notifications.addError('Command failed. Lost connection / process terminated.')
     toggle: (panel, visibleFlag) ->
         if panel.isVisible()
             panel.hide()
