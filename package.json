@@ -1,7 +1,7 @@
 {
   "name": "platformio-ide-debugger",
   "main": "./lib/main",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "A debugging front-end for PlatformIO IDE",
   "keywords": [
     "platformio",
