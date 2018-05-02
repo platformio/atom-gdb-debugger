@@ -62,11 +62,11 @@ module.exports = PlatformIOIDEDebugger =
             if @projectDir and @state.breakpoints?[@projectDir]
                 return Promise.all(
                     @gdb.breaks.insert location for location in @state.breakpoints[@projectDir])
-        .then =>
-            @gdb.exec.start()
+        # .then =>
+        #     @gdb.exec.start()
         .then =>
             if @state.panelVisible then @panel.show()
-            if @state.cliVisible then @cliPanel.show()            
+            if @state.cliVisible then @cliPanel.show()
         .catch (err) =>
             atom.notifications.addError 'Error launching PIO Debugger',
                 description: err.toString()
