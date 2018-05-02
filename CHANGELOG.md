@@ -1,3 +1,11 @@
+## 1.2.6
+
+* Do not execute "run" command automatically
+
+## 1.2.5
+
+* Show runtime value of variable using "mouse over" (2sec delay)
+
 ## 1.2.4
 
 * Compatibility with Atom 1.19
